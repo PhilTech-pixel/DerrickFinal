@@ -1,0 +1,15 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+
+<div>
+    <form method="POST" action="{% url 'confirm' %}">
+        {% csrf_token %}
+        <label for="email">Email</label>
+        <input type="email" name="email">
+        <button type="submit">Check Bookings</button>
+    </form>
+</div>
+
+{% endblock %}
